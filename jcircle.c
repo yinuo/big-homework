@@ -8,6 +8,10 @@ typedef struct node {
 
 int main(int argc, const char *argv[])
 {
+    if(argc < 3){
+    printf("请重新输入\n");
+    return 0;
+    }
 	int m = atoi(argv[1]);
 	int n = atoi(argv[2]);
 	createlist(m, n);
