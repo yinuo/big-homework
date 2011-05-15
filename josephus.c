@@ -5,8 +5,8 @@ int main(int argc, const char *argv[])
 {
 	int t = 0, i, count = 0;
 	int n,m;
-    n = atoi(argv[1]);
-    m = atoi(argv[2]);
+        n = atoi(argv[1]);
+        m = atoi(argv[2]);
 	int a[n];
 	for (i = 0; i < n; i++)
 		a[i] = 1;
