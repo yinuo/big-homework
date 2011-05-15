@@ -13,7 +13,7 @@ void get_email(const char *str)
 			n = i;
         if(i == 0)
           continue;
-			while (m > 0 && i - m < 32) {
+			while (m > 0) {
 				if (str[m - 1] <= 'z' && str[m - 1] >= 'a'
 				    || str[m - 1] <= 'Z'
 				    && str[m - 1] >= 'A'
@@ -24,8 +24,9 @@ void get_email(const char *str)
 					m--;
 				else
 					break;
-			}
-			while (n < 1024 && n - i < 64){
+            }    if(i - m >32)
+                break;
+			while (n < 1024){
 				if (str[n + 1] <= 'z' && str[n + 1] >= 'a'
 				    || str[n + 1] <= 'Z'
 				    && str[n + 1] >= 'A'
@@ -35,8 +36,10 @@ void get_email(const char *str)
 				    || str[n + 1] == '-')
 					n++;
 				else
-					break;            
-            }        
+					break; 
+            }
+                    if(n -i > 64)
+                    break;        
 			if (m == i || n == i)
 				break;
 			for (t = m; t <= n; t++)
